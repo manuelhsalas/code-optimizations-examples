@@ -1,0 +1,6 @@
+*.scc
+Prj/settings/
+settings/
+Prj/Output/
+*.dep
+*.ewt
