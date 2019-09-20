@@ -1,0 +1,50 @@
+Use the optimizer with -o2 or -o3 options when compiling
+  Use registers to pass parameters (-ms compiling option)
+  Use inlining (-x compiling option)
+  Remove the -g option when compiling
+  Follow some of the efficient code generation tips listed below
+
+
+Use register variables for often-used variables. This is particularly true	
+for pointer variables.
+
+
+Use *++ to step through arrays rather than using an index to recalculate
+the address each time through a loop.
+
+
+Use structure assignments to copy blocks of data. The compiler generates		
+very efficient code for structure assignments, so nest objects within
+structures and use simple assignments to copy them.
+
+
+Avoid large local frames and declare the most often used local variables
+first. The compiler uses indirect addressing with an 8-bit offset to
+access local data. To access objects on the local frame with offsets greater
+than 255, the compiler must first load the offset into an index register. This
+requires one extra instruction and incurs two cycles of pipeline delay.
+
+
+Avoid the large model. The large model is inefficient because the compiler
+reloads the data-page pointer (DP) before each access to a global or
+static variable. If you have large array objects, use malloc() to dynamically
+allocate them and access them via pointers rather than declaring them
+globally.
+
+
+Addressing Peripherals as Data Structures in C
+	1) Declare a structure that logically represents the memory locations of
+the peripheral.
+struct controller {
+unsigned int status;
+...
+};
+
+	2) Declare a pointer to the structure and initialize it to the peripheral’s address.
+struct controller *IFperipheral = (struct controller *)0x808000;
+
+	3) In your code, access the peripheral’s memory values indirectly.
+IFperipheral->status = 0;
+
+-------------------------------------------------------------------------
+
