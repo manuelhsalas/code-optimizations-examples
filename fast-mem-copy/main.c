@@ -2,7 +2,7 @@
 
 typedef unsigned int U32;
 
-#define ARRAY_SIZE  (1000)
+#define ARRAY_SIZE  (U32)(1000)
 
 U32 a[ARRAY_SIZE];
 U32 ac[ARRAY_SIZE];
@@ -16,7 +16,7 @@ void funcion(void);
 void funcion2(void);
 void funcion3(void);
 
-int main()
+int main(void)
 {
   funcion();
   
@@ -32,7 +32,7 @@ void funcion(void)
     U32 i;
 
     /* inefficient */
-    for(i = 0; i < ARRAY_SIZE; i++)
+    for(i = (U32)0; i < ARRAY_SIZE; i++)
     {
         ac[i] = a[i];
     }

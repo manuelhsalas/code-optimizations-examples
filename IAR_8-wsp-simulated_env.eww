@@ -3,5 +3,8 @@
     <project>
         <path>$WS_DIR$\fast-mem-copy\ARM-CortexM3-fastMemoryCopy.ewp</path>
     </project>
+    <project>
+        <path>$WS_DIR$\register-variables\ARM-CortexM3-regVariables.ewp</path>
+    </project>
     <batchBuild />
 </workspace>

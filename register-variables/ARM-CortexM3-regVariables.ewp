@@ -599,7 +599,7 @@
                 </option>
                 <option>
                     <name>AOutputFile</name>
-                    <state>$FILE_BNAME$.o</state>
+                    <state></state>
                 </option>
                 <option>
                     <name>ALimitErrorsCheck</name>
@@ -649,7 +649,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state>ARM-CortexM3-fastMemoryCopy.srec</state>
+                    <state></state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -1001,7 +1001,7 @@
                 </option>
                 <option>
                     <name>IlinkTrustzoneImportLibraryOut</name>
-                    <state>ARM-CortexM3-fastMemoryCopy_import_lib.o</state>
+                    <state>ARM-CortexM3-regVariables_import_lib.o</state>
                 </option>
                 <option>
                     <name>OILinkExtraOption</name>
